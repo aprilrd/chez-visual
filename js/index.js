@@ -3,24 +3,27 @@ $(document).ready(function () {
 	var e = d3.max(data, function (d) {return d.End;});
 	var h = data.length + 1;
 	var barHeight = 20;
+	var startLine = 130;
 	
-	var years = [];
-	var x =  d3.scale.linear()
-		.domain([0, d3.max(data, function (d) {return d.End-d.Start+1;})])
-        .range(["0px", "710px"]);
+	var startPos = d3.scale.linear()
+		.domain([1971, 2012])
+        .range(["140", "755"]);
+	var endPos = d3.scale.linear()
+		.domain([1, 42])
+        .range(["15", "630"]);
 	
 	$("div#chart")
 		.height(barHeight*data.length+20)
-		.width(840);
+		.width(800);
 	var svg = d3.select("div#chart svg");
 	
 	//Add bars
 	var selection = svg.selectAll("rect")
 		.data(data);
 	selection.enter().append("rect")		
-		.attr("x", function (d,i) { return 10*(d.Start-s+1)+130;})
+		.attr("x", function (d,i) { return startPos(d.Start)})
 		.attr("y", function (d,i) { return i*barHeight+20;})
-		.attr("width", function(d) { return x(d.End-d.Start+1);})
+		.attr("width", function(d) { return endPos(d.End-d.Start+1)})
 		.attr("height", barHeight-1)
 		.attr("fill", "steelblue");
 		
@@ -42,28 +45,28 @@ $(document).ready(function () {
 	
 	//Add x ticks
 	chart.selectAll("line")
-		.data(x.ticks(10))
+		.data(startPos.ticks(10))
 	  .enter().append("line")
-	    .attr("x1", function (d,i) { return (parseInt(x(d).substring(0,x(d).length-2))+130 + 'px');})
-		.attr("x2", function (d,i) { return (parseInt(x(d).substring(0,x(d).length-2))+130 + 'px');})
+	    .attr("x1", function (d,i) { return startPos(d);})
+		.attr("x2", function (d,i) { return startPos(d);})
 		.attr("y1", 0)
 		.attr("y1", barHeight*data.length+20)
 		.style("stroke", "#CCC");
 	
 	chart.selectAll(".rule")
-		.data(x.ticks(10))
+		.data(startPos.ticks(10))
 	  .enter().append("text")
 	    .attr("class", "rule")
-		.attr("x", function (d,i) { return (parseInt(x(d).substring(0,x(d).length-2))+130 + 'px');})
+		.attr("x", function (d,i) { return startPos(d);})
 		.attr("y", 0)
 		.attr("dy", -3)
 		.attr("text-anchor", "middle")
-		.text(function (d) { return parseInt(d)+parseInt(s);}); //Add labels
+		.text(function (d) { return d;}); //Add labels
 		
 	//Add year=1971 line
 	chart.append("line")
-		.attr("x1", 130)
-		.attr("x2", 130)
+		.attr("x1", startLine)
+		.attr("x2", startLine)
 		.attr("y1", 0)
 		.attr("y2", barHeight*data.length+10)
 		.style("stroke", "#000");
