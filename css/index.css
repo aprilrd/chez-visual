@@ -1,0 +1,65 @@
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+  margin: 0;
+}
+
+
+.bar rect {
+  fill: steelblue;
+}
+
+.bar rect {
+  fill: steelblue;
+}
+
+.bar text.value {
+  fill: white;
+}
+
+.axis {
+  shape-rendering: crispEdges;
+}
+
+.axis path {
+  fill: none;
+}
+
+.x.axis line {
+  stroke: #fff;
+  stroke-opacity: .8;
+}
+
+.y.axis path {
+  stroke: black;
+}
+
+div #chart {
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+}
+
+div .overflow {
+  overflow-y: auto;
+  max-height: 500px;
+}
+
+div #container {
+  width: 100%;
+}
+
+/*==Scrollbar==*/
+div::-webkit-scrollbar {
+    width: 12px;
+}
+
+div::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+
+div::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}?
