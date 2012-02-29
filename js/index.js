@@ -17,6 +17,19 @@ $(document).ready(function () {
 		.width(800);
 	var svg = d3.select("div#chart svg");
 	
+	//Add y axis
+	var yrule = svg.selectAll("g.y")
+		.data(data)
+		.enter()
+		.append("g")
+		.attr("class","y");
+
+	yrule.append("text")
+	    .attr("x", 133)
+	    .attr("y", function(d, i) {return barHeight * (i+1)+15})
+	    .attr("text-anchor", "end")
+	    .text(function(d) { return d.Name});
+	
 	//Add bars
 	var selection = svg.selectAll("rect")
 		.data(data);
@@ -33,6 +46,7 @@ $(document).ready(function () {
 		.text(function(d) { return ( d.Name +", " + d.Start + "-" + d.End); });
 		
 	//Add y labels
+	/*
 	chart.selectAll("text")
 	  .data(data)
 		.enter()
@@ -41,7 +55,7 @@ $(document).ready(function () {
 		.attr("y", function(d, i) {return barHeight * (i+1)})
 		.text(function(d) { return d.Name})
 		.attr("text-anchor", "end")
-		.attr("fill", "black");
+		.attr("fill", "black");*/
 	
 	//Add x ticks
 	chart.selectAll("line")
