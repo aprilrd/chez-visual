@@ -4,14 +4,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<link rel="stylesheet" href="css/index.css" />
-	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/lib/bootstrap.min.css" />
 	
-	<script type="text/javascript" src="lib/jquery-1.7.1.min.js"></script>
-	<script type="text/javascript" src="lib/bootstrap.min.js"></script>
-	<script type="text/javascript" src="lib/bootstrap.responsive.min.js"></script>	
-	<script type="text/javascript" src="lib/d3.js"></script>		
+	<script type="text/javascript" src="js/lib/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="js/lib/bootstrap.min.js"></script>	
+	<script type="text/javascript" src="js/lib/d3.v2.min.js"></script>		
 	
 	<script type="text/javascript" src="js/data.js"></script>
+	<script type="text/javascript" src="js/alldata.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
 	<title>URAP Project Spring 2012</title>
 </head>
@@ -28,7 +28,8 @@
 			<a class="brand" href="#">URAP Project Spring 2012</a>
 				<div class="nav-collapse">
 				<ul class="nav">
-				  <li class="active"><a href="#">Home</a></li>
+				  <li class="active"><a href="#">Timeline</a></li>
+				  <li><a href="./force.html">Social Graph</a></li>
 				  <li><a href="./about.html">About</a></li>
 				</ul>
 				</div><!--/.nav-collapse -->
@@ -38,11 +39,8 @@
 	<div class="container">
 		<div class="row">
 			<div class="span12">
-				<h2>Chart</h2>
 				<div class="overflow">
 					<div id="chart">
-						<svg>
-						</svg>
 					</div>
 				</div>
 			</div>

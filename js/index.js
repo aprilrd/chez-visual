@@ -1,6 +1,6 @@
-$(document).ready(function () {
-	var s = d3.min(data, function (d) {return d.Start;});
-	var e = d3.max(data, function (d) {return d.End;});
+$(document).ready(function () {	
+	var s = d3.min(data, function (d) {return d.pstart;});
+	var e = d3.max(data, function (d) {return d.pend;});
 	var h = data.length + 1;
 	var barHeight = 20;
 	var startLine = 130;
@@ -15,8 +15,9 @@ $(document).ready(function () {
 	$("div#chart")
 		.height(barHeight*data.length+20)
 		.width(800);
-	var svg = d3.select("div#chart svg");
-	
+	var svg = d3.select("div#chart")
+		.append("svg:svg");	
+		
 	//Add y axis
 	var yrule = svg.selectAll("g.y")
 		.data(data)
@@ -28,22 +29,22 @@ $(document).ready(function () {
 	    .attr("x", 133)
 	    .attr("y", function(d, i) {return barHeight * (i+1)+15})
 	    .attr("text-anchor", "end")
-	    .text(function(d) { return d.Name});
+	    .text(function(d) { return d.name});
 	
 	//Add bars
 	var selection = svg.selectAll("rect")
 		.data(data);
 	selection.enter().append("rect")		
-		.attr("x", function (d,i) { return startPos(d.Start)})
+		.attr("x", function (d,i) { return startPos(d.pstart)})
 		.attr("y", function (d,i) { return i*barHeight+20;})
-		.attr("width", function(d) { return endPos(d.End-d.Start+1)})
+		.attr("width", function(d) { return endPos(d.pend-d.pstart+1)})
 		.attr("height", barHeight-1)
 		.attr("fill", "steelblue");
 		
 	var chart = svg.append("g").attr("transform", "translate(10,15)");
 	
 	selection.append("title")
-		.text(function(d) { return ( d.Name +", " + d.Start + "-" + d.End); });
+		.text(function(d) { return ( d.name +", " + d.pstart + "-" + d.pend); });
 		
 	//Add y labels
 	/*
@@ -53,10 +54,10 @@ $(document).ready(function () {
 		.append("svg:text")
 		.attr("x", 125)
 		.attr("y", function(d, i) {return barHeight * (i+1)})
-		.text(function(d) { return d.Name})
+		.text(function(d) { return d.name})
 		.attr("text-anchor", "end")
-		.attr("fill", "black");*/
-	
+		.attr("fill", "black");
+	*/
 	//Add x ticks
 	chart.selectAll("line")
 		.data(startPos.ticks(10))

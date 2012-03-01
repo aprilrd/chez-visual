@@ -35,14 +35,11 @@ body {
 }
 
 div #chart {
-  width: 500px;
-  height: 500px;
   margin: 0 auto;
 }
-
 div .overflow {
   overflow-y: auto;
-  max-height: 500px;
+  max-height: 550px;
 }
 
 div #container {

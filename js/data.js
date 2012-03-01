@@ -1,272 +1,272 @@
 data = [
 	{
-		"Name": "Dianne Dexter",
-		"Job": "Pastry Cook",
-		"Start": "1979",
-		"End": "1983"
+		"name": "Dianne Dexter",
+		"job": "Pastry Cook",
+		"pstart": "1979",
+		"pend": "1983"
 	},
 	{
-		"Name": "Russell Moore",
-		"Job": "Cafe Chef",
-		"Start": "1995",
-		"End": "2006"
+		"name": "Russell Moore",
+		"job": "Cafe Chef",
+		"pstart": "1995",
+		"pend": "2006"
 	},
 	{
-		"Name": "Jeremiah Tower",
-		"Job": "Chef/Co-Owner/Partner",
-		"Start": "1972",
-		"End": "1978"
+		"name": "Jeremiah Tower",
+		"job": "Chef/Co-Owner/Partner",
+		"pstart": "1972",
+		"pend": "1978"
 	},
 	{
-		"Name": "Paul Bertolli",
-		"Job": "Chef",
-		"Start": "1982",
-		"End": "1992"
+		"name": "Paul Bertolli",
+		"job": "Chef",
+		"pstart": "1982",
+		"pend": "1992"
 	},
 	{
-		"Name": "Mark Miller",
-		"Job": "Cook",
-		"Start": "1975",
-		"End": "1979"
+		"name": "Mark Miller",
+		"job": "Cook",
+		"pstart": "1975",
+		"pend": "1979"
 	},
 	{
-		"Name": "Steve Sullivan",
-		"Job": "Bread-maker",
-		"Start": "1979",
-		"End": "1983"
+		"name": "Steve Sullivan",
+		"job": "Bread-maker",
+		"pstart": "1979",
+		"pend": "1983"
 	},
 	{
-		"Name": "Deborah Madison",
-		"Job": "",
-		"Start": "1977",
-		"End": "1979"
+		"name": "Deborah Madison",
+		"job": "",
+		"pstart": "1977",
+		"pend": "1979"
 	},
 	{
-		"Name": "Gilbert Pilgram",
-		"Job": "Chef, cook, general manager",
-		"Start": "1985",
-		"End": "2005"
+		"name": "Gilbert Pilgram",
+		"job": "Chef, cook, general manager",
+		"pstart": "1985",
+		"pend": "2005"
 	},
 	{
-		"Name": "Michael Tusk",
-		"Job": "Cook",
-		"Start": "1990",
-		"End": "1994"
+		"name": "Michael Tusk",
+		"job": "Cook",
+		"pstart": "1990",
+		"pend": "1994"
 	},
 	{
-		"Name": "Lindsey Shere",
-		"Job": "Pastry Chef/Co-Owner/Partner",
-		"Start": "1971",
-		"End": "1998"
+		"name": "Lindsey Shere",
+		"job": "Pastry Chef/Co-Owner/Partner",
+		"pstart": "1971",
+		"pend": "1998"
 	},
 	{
-		"Name": "Christopher Lee",
-		"Job": "Co-Chef",
-		"Start": "1987",
-		"End": "2003"
+		"name": "Christopher Lee",
+		"job": "Co-Chef",
+		"pstart": "1987",
+		"pend": "2003"
 	},
 	{
-		"Name": "Mary Canales",
-		"Job": "Pastry Chef",
-		"Start": "1996",
-		"End": "2006"
+		"name": "Mary Canales",
+		"job": "Pastry Chef",
+		"pstart": "1996",
+		"pend": "2006"
 	},
 	{
-		"Name": "Gayle Pirie",
-		"Job": "Alice's assistant, chef",
-		"Start": "1993",
-		"End": "1997"
+		"name": "Gayle Pirie",
+		"job": "Alice's assistant, chef",
+		"pstart": "1993",
+		"pend": "1997"
 	},
 	{
-		"Name": "Peggy Smith",
-		"Job": "Cafe Chef",
-		"Start": "1980",
-		"End": "1997"
+		"name": "Peggy Smith",
+		"job": "Cafe Chef",
+		"pstart": "1980",
+		"pend": "1997"
 	},
 	{
-		"Name": "Alison Barakat",
-		"Job": "",
-		"Start": "2000",
-		"End": "2003"
+		"name": "Alison Barakat",
+		"job": "",
+		"pstart": "2000",
+		"pend": "2003"
 	},
 	{
-		"Name": "Jonathan Waxman",
-		"Job": "",
-		"Start": "1978",
-		"End": "1978"
+		"name": "Jonathan Waxman",
+		"job": "",
+		"pstart": "1978",
+		"pend": "1978"
 	},
 	{
-		"Name": "Suzanne Goin",
-		"Job": "",
-		"Start": "1990",
-		"End": "1992"
+		"name": "Suzanne Goin",
+		"job": "",
+		"pstart": "1990",
+		"pend": "1992"
 	},
 	{
-		"Name": "Joyce Goldstein",
-		"Job": "Cafe Chef and Manager",
-		"Start": "1981",
-		"End": "1983"
+		"name": "Joyce Goldstein",
+		"job": "Cafe Chef and Manager",
+		"pstart": "1981",
+		"pend": "1983"
 	},
 	{
-		"Name": "Mark Peel",
-		"Job": "",
-		"Start": "1981",
-		"End": "1982"
+		"name": "Mark Peel",
+		"job": "",
+		"pstart": "1981",
+		"pend": "1982"
 	},
 	{
-		"Name": "April Bloomfield",
-		"Job": "Line Cook",
-		"Start": "2003",
-		"End": "2004"
+		"name": "April Bloomfield",
+		"job": "Line Cook",
+		"pstart": "2003",
+		"pend": "2004"
 	},
 	{
-		"Name": "David Tanis",
-		"Job": "Restaurant Chef",
-		"Start": "1983",
-		"End": "2012"
+		"name": "David Tanis",
+		"job": "Restaurant Chef",
+		"pstart": "1983",
+		"pend": "2012"
 	},
 	{
-		"Name": "Jean- Pierre Moulle",
-		"Job": "Restaurant Chef",
-		"Start": "1975",
-		"End": "2012"
+		"name": "Jean- Pierre Moulle",
+		"job": "Restaurant Chef",
+		"pstart": "1975",
+		"pend": "2012"
 	},
 	{
-		"Name": "Cal Peternell",
-		"Job": "Cafe Chef",
-		"Start": "1995",
-		"End": "2012"
+		"name": "Cal Peternell",
+		"job": "Cafe Chef",
+		"pstart": "1995",
+		"pend": "2012"
 	},
 	{
-		"Name": "Beth Wells",
-		"Job": "Cafe Chef",
-		"Start": "2008",
-		"End": "2012"
+		"name": "Beth Wells",
+		"job": "Cafe Chef",
+		"pstart": "2008",
+		"pend": "2012"
 	},
 	{
-		"Name": "Mia Ponce",
-		"Job": "Pastry Chef",
-		"Start": "2006",
-		"End": "2012"
+		"name": "Mia Ponce",
+		"job": "Pastry Chef",
+		"pstart": "2006",
+		"pend": "2012"
 	},
 	{
-		"Name": "Stacie Pierce",
-		"Job": "Pastry Chef",
-		"Start": "2007",
-		"End": "2012"
+		"name": "Stacie Pierce",
+		"job": "Pastry Chef",
+		"pstart": "2007",
+		"pend": "2012"
 	},
 	{
-		"Name": "Jerome Waag",
-		"Job": "Co-Chef",
-		"Start": "2011",
-		"End": "2012"
+		"name": "Jerome Waag",
+		"job": "Co-Chef",
+		"pstart": "2011",
+		"pend": "2012"
 	},
 	{
-		"Name": "Victoria Wise",
-		"Job": "Chef",
-		"Start": "1971",
-		"End": "1973"
+		"name": "Victoria Wise",
+		"job": "Chef",
+		"pstart": "1971",
+		"pend": "1973"
 	},
 	{
-		"Name": "Tom Guernsey",
-		"Job": "",
-		"Start": "1972",
-		"End": "1990"
+		"name": "Tom Guernsey",
+		"job": "",
+		"pstart": "1972",
+		"pend": "1990"
 	},
 	{
-		"Name": "Claire O'Sullivan",
-		"Job": "Cafe Chef",
-		"Start": "1983",
-		"End": "1983"
+		"name": "Claire O'Sullivan",
+		"job": "Cafe Chef",
+		"pstart": "1983",
+		"pend": "1983"
 	},
 	{
-		"Name": "Catherine Brandel",
-		"Job": "Forager then Co-Chef (start in 1987)",
-		"Start": "1983",
-		"End": "1994"
+		"name": "Catherine Brandel",
+		"job": "Forager then Co-Chef (pstart in 1987)",
+		"pstart": "1983",
+		"pend": "1994"
 	},
 	{
-		"Name": "Alan Tangren",
-		"Job": "Pastry Chef",
-		"Start": "2001",
-		"End": "2003"
+		"name": "Alan Tangren",
+		"job": "Pastry Chef",
+		"pstart": "2001",
+		"pend": "2003"
 	},
 	{
-		"Name": "Kelsie Kerr",
-		"Job": "Co-Chef",
-		"Start": "2001",
-		"End": "2004"
+		"name": "Kelsie Kerr",
+		"job": "Co-Chef",
+		"pstart": "2001",
+		"pend": "2004"
 	},
 	{
-		"Name": "Sylvan Brackett",
-		"Job": "Cook/Creative Director",
-		"Start": "2000",
-		"End": "2006"
+		"name": "Sylvan Brackett",
+		"job": "Cook/Creative Director",
+		"pstart": "2000",
+		"pend": "2006"
 	},
 	{
-		"Name": "Michael Peternell",
-		"Job": "Cafe Co-Chef",
-		"Start": "1995",
-		"End": "2012"
+		"name": "Michael Peternell",
+		"job": "Cafe Co-Chef",
+		"pstart": "1995",
+		"pend": "2012"
 	},
 	{
-		"Name": "Willy Bishop",
-		"Job": "Cook",
-		"Start": "1972",
-		"End": "1976"
+		"name": "Willy Bishop",
+		"job": "Cook",
+		"pstart": "1972",
+		"pend": "1976"
 	},
 	{
-		"Name": "Leah Puidokas",
-		"Job": "Co-Chef",
-		"Start": "2005",
-		"End": "2008"
+		"name": "Leah Puidokas",
+		"job": "Co-Chef",
+		"pstart": "2005",
+		"pend": "2008"
 	},
 	{
-		"Name": "Joe Evans",
-		"Job": "Cook",
-		"Start": "1999",
-		"End": "2003"
+		"name": "Joe Evans",
+		"job": "Cook",
+		"pstart": "1999",
+		"pend": "2003"
 	},
 	{
-		"Name": "Seen Lippert",
-		"Job": "Cook",
-		"Start": "1985",
-		"End": "1996"
+		"name": "Seen Lippert",
+		"job": "Cook",
+		"pstart": "1985",
+		"pend": "1996"
 	},
 	{
-		"Name": "Amelia O'Reilly",
-		"Job": "Line Cook/Prep Cook",
-		"Start": "2005",
-		"End": "2010"
+		"name": "Amelia O'Reilly",
+		"job": "Line Cook/Prep Cook",
+		"pstart": "2005",
+		"pend": "2010"
 	},
 	{
-		"Name": "Chris McDonald",
-		"Job": "Chef/Executive Chef",
-		"Start": "1987",
-		"End": "1987"
+		"name": "Chris McDonald",
+		"job": "Chef/Executive Chef",
+		"pstart": "1987",
+		"pend": "1987"
 	},
 	{
-		"Name": "Brian Collins",
-		"Job": "Cook",
-		"Start": "2000",
-		"End": "2005"
+		"name": "Brian Collins",
+		"job": "Cook",
+		"pstart": "2000",
+		"pend": "2005"
 	},
 	{
-		"Name": "Samin Nosrat",
-		"Job": "Line Cook",
-		"Start": "2000",
-		"End": "2003"
+		"name": "Samin Nosrat",
+		"job": "Line Cook",
+		"pstart": "2000",
+		"pend": "2003"
 	},
 	{
-		"Name": "Bruno Solerie",
-		"Job": "Chef de Partie",
-		"Start": "1999",
-		"End": "1999"
+		"name": "Bruno Solerie",
+		"job": "Chef de Partie",
+		"pstart": "1999",
+		"pend": "1999"
 	},
 	{
-		"Name": "Arnon Oren",
-		"Job": "Senior Cook",
-		"Start": "1999",
-		"End": "2004"
+		"name": "Arnon Oren",
+		"job": "Senior Cook",
+		"pstart": "1999",
+		"pend": "2004"
 	}
 ];
