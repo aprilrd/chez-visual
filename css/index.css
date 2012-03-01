@@ -4,7 +4,6 @@ body {
   margin: 0;
 }
 
-
 .bar rect {
   fill: steelblue;
 }
@@ -34,9 +33,12 @@ body {
   stroke: black;
 }
 
+.nodetext { pointer-events: none; font: 10px sans-serif; }
+
 div #chart {
   margin: 0 auto;
 }
+
 div .overflow {
   overflow-y: auto;
   max-height: 550px;
