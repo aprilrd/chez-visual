@@ -41,11 +41,21 @@
 	<div class="container">
 		<div class="row">
 			<div class="span12">
-				<div id="chart" class="overflow">
+				<div id="chart1" class="overflow">
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="span12">
+				<div id="chart2" class="overflow" style="display: none;">
 				</div>
 			</div>
 		</div>
 		
+		<div class="btn-group">
+			<button class="btn" onclick="$('#chart1').show(); $('#chart2').hide();">Dot</button>
+			<button class="btn" onclick="$('#chart1').hide(); $('#chart2').show();">Name</button>
+		</div>
 		<hr>
 		
 		<footer>

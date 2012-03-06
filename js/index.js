@@ -7,7 +7,7 @@ function setDialog(d, i) {
 	
 	//Creating map
 	//setMap(d, i);
-	$('#myModal').modal('show'); //show modal
+	$('#chef_modal').modal('show'); //show modal
 }
 
 function setMap (d, i) {
@@ -40,14 +40,14 @@ $(document).ready(function () {
 	
 	var startPos = d3.scale.linear()
 		.domain([1971, 2012])
-        .range(["140", "755"]);
-	var endPos = d3.scale.linear()
+        .range(["140", "878"]);
+	var width = d3.scale.linear()
 		.domain([1, 42])
-        .range(["15", "630"]);
+        .range(["18", "756"]);
 	
 	$("div#chart")
-		.height(barHeight*data.length+20)
-		.width(800);
+		.css("max-height", $(document).innerHeight()-$("footer").outerHeight()-$("div .navbar").outerHeight()-160)
+		.width(940);
 	var svg = d3.select("div#chart")
 		.append("svg:svg");	
 		
@@ -70,7 +70,7 @@ $(document).ready(function () {
 	var rect = selection.enter().append("rect")		
 		.attr("x", function (d,i) { return startPos(d.pstart)})
 		.attr("y", function (d,i) { return i*barHeight+20;})
-		.attr("width", function(d) { return endPos(d.pend-d.pstart+1)})
+		.attr("width", function(d) { return width(d.pend-d.pstart+1)})
 		.attr("height", barHeight-1)
 		.attr("fill", "steelblue");
 		
