@@ -3,18 +3,19 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link rel="stylesheet" href="css/index.css" />
+	<link rel="stylesheet" href="css/lib/jquery-ui-scrollbar.css" />
 	<link rel="stylesheet" href="css/lib/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/index.css" />
 	
 	<script type="text/javascript" src="js/lib/jquery-1.7.1.min.js"></script>
 	<script type="text/javascript" src="js/lib/bootstrap.min.js"></script>	
 	<script type="text/javascript" src="js/lib/d3.v2.min.js"></script>
-	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-	
+	<script type="text/javascript" src="js/lib/jquery-ui-slider.js"></script>
+
 	<script type="text/javascript" src="js/data.js"></script>
 	<script type="text/javascript" src="js/alldata.js"></script>
 	<script type="text/javascript" src="js/common.js"></script>
-	<script type="text/javascript" src="js/force.js"></script>
+	<script type="text/javascript" src="js/boundedforce.js"></script>
 	<title>URAP Project Spring 2012</title>
 </head>
 
@@ -31,8 +32,8 @@
 				<div class="nav-collapse">
 				<ul class="nav">
 				  <li><a href="./index.html">Timeline</a></li>
-				  <li class="active"><a href="./force.html">Social Graph</a></li>
-				  <li><a href="./boundedforce.html">Timelined Social Graph</a></li>
+				  <li><a href="./force.html">Social Graph</a></li>
+				  <li class="active"><a href="./boundedforce.html">Timelined Social Graph</a></li>
 				  <li><a href="./about.html">About</a></li>
 				</ul>
 				</div><!--/.nav-collapse -->
@@ -42,21 +43,17 @@
 	<div class="container">
 		<div class="row">
 			<div class="span12">
+				<input type="text" id="year" style="border:0; color:#f6931f; font-weight:bold;" />
+				<div id="slider"></div>
+			</div>			
+		</div>
+		<div class="row">
+			<div class="span12">
 				<div id="chart1" class="overflow">
 				</div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="span12">
-				<div id="chart2" class="overflow" style="display: none;">
-				</div>
-			</div>
-		</div>
 		
-		<div class="btn-group">
-			<button class="btn" onclick="$('#chart1').show(); $('#chart2').hide();">Dot</button>
-			<button class="btn" onclick="$('#chart1').hide(); $('#chart2').show();">Name</button>
-		</div>
 		<hr>
 		
 		<footer>

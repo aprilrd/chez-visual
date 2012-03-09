@@ -8,10 +8,6 @@ body {
   fill: steelblue;
 }
 
-.bar rect {
-  fill: steelblue;
-}
-
 .bar text.value {
   fill: white;
 }
@@ -48,6 +44,9 @@ div .overflow {
 div #container {
   width: 100%;
 }
+
+/*==boundedforce==*/
+
 
 /*==Scrollbar==*/
 div::-webkit-scrollbar {

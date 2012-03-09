@@ -1,20 +1,4 @@
-$(document).ready(function () {
-	var links = new Array();
-	var i, j;
-	var length = alldata.nodes.length;
-	for (i=0; i<length; i++) {
-		if (typeof alldata.nodes[i].pend == 'number' && typeof alldata.nodes[i].pstart == 'number') {
-			for (j=i+1; j<length; j++) {
-				if (typeof alldata.nodes[j].pend == 'number' && typeof alldata.nodes[j].pstart == 'number') {
-					if (!(alldata.nodes[i].pend <= alldata.nodes[j].pstart)&&(alldata.nodes[i].pstart <= alldata.nodes[j].pend)) {
-						links.push({"target":i, "source":j, "value":Math.min(Math.abs(alldata.nodes[i].pend-alldata.nodes[j].pstart),Math.abs(alldata.nodes[i].pend-alldata.nodes[i].pstart))});
-					}
-				}
-			}
-		}
-	}
-	alldata.links = links;
-	
+$(document).ready(function () {	
 	var w = 940,
     	h = $(document).innerHeight()-$("footer").outerHeight()-$("div .navbar").outerHeight()-160;
     $("div #chart1").css("max-height", h+50);
