@@ -1,36 +1,3 @@
-function setDialog(d, i) {
-	$('#modal-title').text(d.name +", who has worked from " + d.pstart + " to " + d.pend);
-	console.log(alldata.nodes[alldata.lookup[d.name]]);
-	var desc = "";
-	var alldatum = alldata.nodes[alldata.lookup[d.name]];
-	
-	
-	//Creating map
-	//setMap(d, i);
-	$('#chef_modal').modal('show'); //show modal
-}
-
-function setMap (d, i) {
-	var alldatum = alldata.nodes[alldata.lookup[d.name]];
-	var current = alldatum.current;
-	var i;
-	var geocoder = new google.maps.Geocoder();
-	var myOptions = {
-          center: new google.maps.LatLng(37.8798723107172, -122.269244855449),
-          zoom: 5,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-    var map = new google.maps.Map(document.getElementById("map"), myOptions);
-    
-	for (i = 0; i < current.length; i++) {
-		var name = current[i].business;
-		geocoder.geocode({address:current[i].address}, function (data) {
-			console.log(data);
-			new google.maps.Marker({position: data[0].geometry.location,map: map,title:name});
-		});
-	}
-}
-
 $(document).ready(function () {	
 	var s = d3.min(data, function (d) {return d.pstart;});
 	var e = d3.max(data, function (d) {return d.pend;});
@@ -74,7 +41,7 @@ $(document).ready(function () {
 		.attr("height", barHeight-1)
 		.attr("fill", "steelblue");
 		
-	rect.on("click", function (d, i){ setDialog(d, i);});
+	rect.on("click", shared.setDialog);
 		
 	var chart = svg.append("g").attr("transform", "translate(10,15)");
 	

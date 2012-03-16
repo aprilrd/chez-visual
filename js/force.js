@@ -50,7 +50,8 @@ $(document).ready(function () {
         .style("color", "green");
         
     node.on("mouseover", mouseover)
-    	.on("mouseout", mouseout);
+    	.on("mouseout", mouseout)
+    	.on("click", shared.setDialog);
          
     force.on("tick", function() {
       link.attr("x1", function(d) { return d.source.x; })
@@ -99,7 +100,8 @@ $(document).ready(function () {
         .text(function(d) {return d.name;});
         
     node2.on("mouseover", mouseover2)
-    	.on("mouseout", mouseout2);
+    	.on("mouseout", mouseout2)
+    	.on("click", shared.setDialog);
          
     force2.on("tick", function() {
       link2.attr("x1", function(d) { return d.source.x; })

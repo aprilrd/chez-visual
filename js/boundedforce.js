@@ -4,7 +4,8 @@ $(document).ready(function () {
 						 value:1972,
 						 slide: function( event, ui ) {
 							$("#year").val(ui.value);
-							force.resume();
+						   	restart();
+							
 							//node.style("fill", function(d) { return colorcheck(d);});
 						}
 						});
@@ -23,8 +24,9 @@ $(document).ready(function () {
 	var force = d3.layout.force()
        .charge(-500)
        .theta(1)
-       .linkDistance(500)
-       .gravity(0.05)
+       .friction(0.5)
+       .linkDistance(400)
+       .gravity(0.1)
        .size([w, h]);
 
 	var vis = d3.select("div #chart1").append("svg:svg")
@@ -38,19 +40,19 @@ $(document).ready(function () {
 		.attr("width", w/2)
 		.attr("height", h/2)
 		.style("fill-opacity", "0")
-		.style("stroke", "#333");
+		.style("stroke", "red");
 
 	force
         .nodes(alldata.nodes)
-        //.links(alldata.links)
+        .links(alldata.links)
         .start();
         
-	/*var link = vis.selectAll("line.link")
-        .data(alldata.links)
+	var link = vis.selectAll("line.link")
+        .data(currentlinks(), function(d) { return d.source.id + "-" + d.target.id; })
       .enter().append("line")
         .attr("class", "link")
         .style("stroke-width", function(d) { return Math.log(d.value); })
-        .style("stroke", "#ddd");*/
+        .style("stroke", "#ddd");
         
     var node = vis.selectAll("circle.node")
 	     .data(alldata.nodes)
@@ -71,14 +73,37 @@ $(document).ready(function () {
         .attr("dy", ".35em")
         .text(function(d) { return d.name; })
         .style("color", "black");
-        
+   	
+   	node.on("click", shared.setDialog);
     /*node.on("mouseover", mouseover)
     	.on("mouseout", mouseout);*/
-         
+    link.on("click", function(d) {console.log(d);});
+    
+    
     force.on("tick", tick);
     
+    function restart() {
+		vis.selectAll("circle.node")
+			.transition()
+	   		.duration(100)
+	   		.attr("r", nodesize);
+	   		    	
+    	var link = vis.selectAll("line.link")
+	        .data(currentlinks(), function(d) { return d.source.id + "-" + d.target.id; });
+	        
+	    link.enter().insert("line", "circle")
+	        .attr("class", "link")
+	        .style("stroke-width", function(d) { return Math.log(d.value); })
+	        .style("stroke", "#ddd");
+        
+        link.exit().remove();
+        
+        force.resume();
+    }
+    
     function tick() {
-      node.attr("cx", function(d, i) { 
+      vis.selectAll("circle.node")
+      	.attr("cx", function(d, i) { 
       		var r = this.r.animVal.value;
       		if (timecheck(d)) { //condition to be in
       			//d.x = d.x + (d.x <= w/4)*(Math.max(d.x, w/4)-d.x) + (d.x >= w/4*3) * (Math.min(d.x, w/4*3)-d.x);
@@ -114,10 +139,11 @@ $(document).ready(function () {
         	return d.y; 
         });
         
-        /*link.attr("x1", function(d) { return d.source.x; })
+        vis.selectAll("line.link")
+        .attr("x1", function(d) { return d.source.x; })
         .attr("y1", function(d) { return d.source.y; })
         .attr("x2", function(d) { return d.target.x; })
-        .attr("y2", function(d) { return d.target.y; });*/
+        .attr("y2", function(d) { return d.target.y; });
     }
     
     function colorcheck(d) {
@@ -139,7 +165,8 @@ $(document).ready(function () {
     function mouseover(d, i) {
     	var connected = [d.index];
     	    	
-		node.style("fill", function(datum) {
+		vis.selectAll("circle.node")
+		.style("fill", function(datum) {
 			//console.log(connected.indexOf(datum.index));
 			if (connected.indexOf(datum.index) == -1) {
 				return "#ccc";
@@ -150,14 +177,30 @@ $(document).ready(function () {
     }
     
     function mouseout(d, i) {
-    	node.style("fill", "steelblue");
+    	vis.selectAll("circle.node").style("fill", "steelblue");
     }
     
     function nodesize(d) {
-    	if (typeof d.pend == 'number' && typeof d.pstart == 'number') {
-    		return Math.max(d.pend-d.pstart, 10);
+    	if (typeof d.pend == 'number' && typeof d.pstart == 'number') { 
+    		return Math.min(Math.max($("#year").val()-d.pstart, 5), Math.max(d.pend-d.pstart, 5));
     	} else {
-    		return 10;
+    		return 5;
     	} 
+    }
+    
+    function currentlinks() {
+    	var y = $("#year").val();
+    	var currentLinks = [];
+    	for (var i in alldata.links) {
+    		var link = alldata.links[i];
+    		try {
+    		if ((link.source.pstart <= y) && (link.target.pstart <= y)) {
+   				currentLinks.push(link);
+    		} 
+    		} catch(e) {
+    			console.log(link);
+    		}
+    	}
+    	return currentLinks;
     }
 });

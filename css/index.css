@@ -48,6 +48,12 @@ div #container {
 /*==boundedforce==*/
 
 
+/*==Map==*/
+div#map {
+	height: 150px;
+	width: 150px;
+}
+
 /*==Scrollbar==*/
 div::-webkit-scrollbar {
     width: 12px;

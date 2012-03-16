@@ -11,10 +11,12 @@
 	<script type="text/javascript" src="js/lib/bootstrap.min.js"></script>	
 	<script type="text/javascript" src="js/lib/d3.v2.min.js"></script>
 	<script type="text/javascript" src="js/lib/jquery-ui-slider.js"></script>
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 
 	<script type="text/javascript" src="js/data.js"></script>
 	<script type="text/javascript" src="js/alldata.js"></script>
 	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="js/shared.js"></script>
 	<script type="text/javascript" src="js/boundedforce.js"></script>
 	<title>URAP Project Spring 2012</title>
 </head>
@@ -51,6 +53,19 @@
 			<div class="span12">
 				<div id="chart1" class="overflow">
 				</div>
+			</div>
+		</div>
+		
+		<div class="modal fade" id="chef_modal">
+			<div class="modal-header">
+				<a class="close" data-dismiss="modal">X</a>
+				<h3 id="modal-title"></h3>
+			</div>
+			<div class="modal-body">
+				<div id="map"></div>
+			</div>
+			<div class="modal-footer">
+				<a href="#" class="btn btn-primary" data-dismiss="modal">Close</a>
 			</div>
 		</div>
 		
