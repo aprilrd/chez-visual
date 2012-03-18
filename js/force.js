@@ -39,7 +39,9 @@ $(document).ready(function () {
     
     node.append("svg:title")
         .text(function(d) {return d.name;});
-         
+    
+    //Not working yet
+    /*
     node.append("svg:text")
         .attr("class", "nodetext")
         .attr("x", 300)
@@ -48,6 +50,7 @@ $(document).ready(function () {
         .attr("dy", ".35em")
         .text(function(d) { return d.name; })
         .style("color", "green");
+    */
         
     node.on("mouseover", mouseover)
     	.on("mouseout", mouseout)

@@ -1,3 +1,14 @@
+/*==general ==*/
+text {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	cursor:default;
+}
+
 body {
   padding-top: 60px;
   padding-bottom: 40px;
@@ -46,7 +57,12 @@ div #container {
 }
 
 /*==boundedforce==*/
-
+span .category {
+	height:20px;
+}
+span .report {
+	height:20px;
+}
 
 /*==Map==*/
 div#map {

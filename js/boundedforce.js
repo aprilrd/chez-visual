@@ -5,17 +5,26 @@ $(document).ready(function () {
 						 slide: function( event, ui ) {
 							$("#year").val(ui.value);
 						   	restart();
-							
-							//node.style("fill", function(d) { return colorcheck(d);});
-						}
+						   	$("#numLinks").html(vis.selectAll("line.link")[0].length);
+						   	$("#numAlumni").html(countnodes());
+						 },  	
+						 change: function( event, ui ) {
+						 	restart();
+						   	$("#numLinks").html(vis.selectAll("line.link")[0].length);
+						   	$("#numAlumni").html(countnodes());
+						 }
 						});
 	$("#year").val($("#slider").slider("value"));
 	$("#year").change(function () {
-		$("#slider").val($("#year").val());
+		console.log($(this).val());
+		if ($(this).val() > 2012) {$(this).val(2012)};
+		if ($(this).val() < 1972) {$(this).val(1972)};
+		
+		$("#slider").slider("value",$(this).val());
 	});
 	
 	var w = 940,
-    	h = $(document).innerHeight()-$("footer").outerHeight()-$("div .navbar").outerHeight()-160;
+    	h = $(document).innerHeight()-$("footer").outerHeight()-$("div .navbar").outerHeight()-$("div #control").outerHeight()-160;
     $("div #chart1").css("max-height", h+50);
     $("div #chart2").css("max-height", h+50);
 	
@@ -26,7 +35,7 @@ $(document).ready(function () {
        .theta(1)
        .friction(0.5)
        .linkDistance(400)
-       .gravity(0.1)
+       .gravity(0.05)
        .size([w, h]);
 
 	var vis = d3.select("div #chart1").append("svg:svg")
@@ -41,7 +50,17 @@ $(document).ready(function () {
 		.attr("height", h/2)
 		.style("fill-opacity", "0")
 		.style("stroke", "red");
-
+		
+	//add text
+	vis.append("text")
+		.attr("x", w/4)
+		.attr("y", h/4)
+		.attr("dx", 5)
+		.attr("dy", 20)
+		.attr("font-size", 20)
+		.text("Chez Panisse");
+	
+	//add force graph
 	force
         .nodes(alldata.nodes)
         .links(alldata.links)
@@ -53,7 +72,7 @@ $(document).ready(function () {
         .attr("class", "link")
         .style("stroke-width", function(d) { return Math.log(d.value); })
         .style("stroke", "#ddd");
-        
+    
     var node = vis.selectAll("circle.node")
 	     .data(alldata.nodes)
 	   .enter().append("circle")
@@ -74,14 +93,18 @@ $(document).ready(function () {
         .text(function(d) { return d.name; })
         .style("color", "black");
    	
+   	//tie events
    	node.on("click", shared.setDialog);
     /*node.on("mouseover", mouseover)
     	.on("mouseout", mouseout);*/
     link.on("click", function(d) {console.log(d);});
-    
-    
     force.on("tick", tick);
     
+    //update table
+    $("#numLinks").html(vis.selectAll("line.link")[0].length);
+    $("#numAlumni").html(countnodes());
+    
+    //private functions
     function restart() {
 		vis.selectAll("circle.node")
 			.transition()
@@ -155,8 +178,9 @@ $(document).ready(function () {
     }
     
     function timecheck (d) {
-    	var year = $("#slider").slider("value"); 
-    	if (d.pstart <= year && year <= d.pend) {
+    	var y = $("#year").val();
+    	if (d.pstart == null || d.pend == null) { return false;	} 
+    	if (d.pstart <= y && y <= d.pend) {
     		return true;
     	} 
     	return false;
@@ -193,14 +217,21 @@ $(document).ready(function () {
     	var currentLinks = [];
     	for (var i in alldata.links) {
     		var link = alldata.links[i];
-    		try {
     		if ((link.source.pstart <= y) && (link.target.pstart <= y)) {
    				currentLinks.push(link);
     		} 
-    		} catch(e) {
-    			console.log(link);
-    		}
     	}
     	return currentLinks;
+    }
+    
+    function countnodes() {
+    	var y = $("#year").val();
+    	var count = 0;
+    	for (var i in alldata.nodes) {
+    		var node = alldata.nodes[i];
+    		if (node.pstart == null) {continue;}
+    		if (node.pstart <= y) {count ++;} 
+    	}    	
+    	return count;
     }
 });
