@@ -1,6 +1,6 @@
 $(document).ready(function () {	
 	var w = 940,
-    	h = $(document).innerHeight()-$("footer").outerHeight()-$("div .navbar").outerHeight()-160;
+    	h = $(document).innerHeight()-$("footer").outerHeight()-$("div .navbar").outerHeight()-180;
     $("div #chart1").css("max-height", h+50);
     $("div #chart2").css("max-height", h+50);
 	

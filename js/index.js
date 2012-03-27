@@ -13,7 +13,7 @@ $(document).ready(function () {
         .range(["18", "756"]);
 	
 	$("div#chart")
-		.css("max-height", $(document).innerHeight()-$("footer").outerHeight()-$("div .navbar").outerHeight()-160)
+		.css("max-height", $(document).innerHeight()-$("footer").outerHeight()-$("div .navbar").outerHeight()-180)
 		.width(940);
 	var svg = d3.select("div#chart")
 		.append("svg:svg");	
